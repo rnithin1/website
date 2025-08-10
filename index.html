@@ -58,8 +58,41 @@
           </tr>
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='nightsight_image'><img src='images/glossyindir2.png'></div>
+                <img src='images/glossyindir.png'>
+              </div>
+              <script type="text/javascript">
+                function nightsight_start() {
+                  document.getElementById('nightsight_image').style.opacity = "1";
+                }
 
-
+                function nightsight_stop() {
+                  document.getElementById('nightsight_image').style.opacity = "0";
+                }
+                nightsight_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="webpage/gen_neumat.html">
+                <papertitle>Generative Neural Materials</papertitle>
+              </a>
+              <br>
+              <strong>Nithin Raghavan*</strong>,
+              <a href="">Krishna Mullia*</a>,
+              <a href="https://cseweb.ucsd.edu/~k2lin/">Alex Trevithick</a>,
+              <a href="http://kevinkingo.com/">Fujun Luan</a>,
+              <a href="https://sai-bi.github.io/">Milos Hasan</a>,
+              <a href="https://cseweb.ucsd.edu/~ravir/">Ravi Ramamoorthi</a>
+              <br>
+	      <em>ACM SIGGRAPH (Conference Track)</em>, 2025
+              <br>
+              <p></p>
+	            <p>We present the first image-conditioned diffusion model for neural materials, and show an extension to text conditioning. To do this, we define a universal basis for neural materials as 16-channel feature textures, and train a conditional diffusion model for generating neural materials in this basis from flash images, natural images and text prompts. To our knowledge, our work is the first to enable single-shot neural material generation from arbitrary text or image prompts.</p>
+            </td>
+          </tr>
           <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
@@ -148,64 +181,6 @@
 
         </tbody></table>
 
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tr>
-            <td>
-              <heading>Other Projects</heading>
-            </td>
-          </tr>
-        </tbody></table>
-        <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr onmouseout="cc_stop()" onmouseover="cc_start()">
-
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='cc_image'>
-                  <img src='images/balls-inhibition-2.png' width="160"> </div>
-                <img src='images/balls-gt.png' width="160">
-              </div>
-              <script type="text/javascript">
-                function cc_start() {
-                  document.getElementById('cc_image').style.opacity = "1";
-                }
-
-                function cc_stop() {
-                  document.getElementById('cc_image').style.opacity = "0";
-                }
-                cc_stop()
-              </script>
-            </td>
-            <td width="75%" valign="center">
-		    <a href="data/CS_294_Final_Report__Copy_.pdf">Modeling The Effect of Lateral Inhibition in the Retina on Color Perception</a>
-		    <br>
-		    CS 294-164: A biologically-plausible model for fixational drift motion in the retina based on Anderson, <i>et al.</i> (2020) taking into account neuronal lateral inhibition is able to better reconstruct higher-contrast regions of input stimuli, and could potentially show more improvements with a well-chosen spatial prior
-            </td>
-          </tr>
-        </tbody></table>
-        <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr onmouseout="cc_stop()" onmouseover="cc_start()">
-
-            <td style="padding:20px;width:25%;vertical-align:middle"><img src="images/ntk.png">
-            </td>
-            <td width="75%" valign="center">
-		    <a href="data/CS_294_220_Final_Project.pdf">On the Generalizability of Two-Layer ReLU-activated Neural Networks with a Fourier Feature Embedding</a>
-		    <br>
-		    CS 294-220: Deriving generalizability bounds of binary coordinate-based MLPs with an input Fourier Feature encoding using Rademacher analysis and reproducing kernel Hilbert space (RKHS) theory.
-            </td>
-          </tr>
-        </tbody></table>
-        <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr onmouseout="cc_stop()" onmouseover="cc_start()">
-
-            <td style="padding:20px;width:25%;vertical-align:middle"><img src="images/stawk.png">
-            </td>
-            <td width="75%" valign="center">
-		    <a href="data/timeseries.pdf">Statistics 153 Final Project</a>
-		    <br>
-		    STAT 153: Predicting the future price of a stock using methods from time series analysis.
-            </td>
-          </tr>
-        </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
             <td style="padding:0px">
