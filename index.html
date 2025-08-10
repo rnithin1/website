@@ -32,7 +32,7 @@
               <p style="text-align:center">
 	      <name>Nithin Raghavan</name>
               </p>
-	      <p>I am a first-year PhD student at <a href="https://ucsd.edu/">UC San Diego</a> working in Dr <a href="http://cseweb.ucsd.edu/~ravir/">Ravi Ramamoorthi</a>'s group. I completed my undergraduate studies at <a href="why.html">UC Berkeley</a> double-majoring in Computer Science and Applied Mathematics. I was also part of Dr <a href="https://www2.eecs.berkeley.edu/Faculty/Homepages/yirenng.html">Ren Ng</a>'s group, which is a part of the <a href="https://bair.berkeley.edu/">Berkeley AI Research Group</a>.
+	      <p>I am a second-year PhD student at <a href="https://ucsd.edu/">UC San Diego</a> working in Dr <a href="http://cseweb.ucsd.edu/~ravir/">Ravi Ramamoorthi</a>'s group. I completed my undergraduate studies at <a href="why.html">UC Berkeley</a> in Applied Mathematics and Computer Science. I was also part of Dr <a href="https://www2.eecs.berkeley.edu/Faculty/Homepages/yirenng.html">Ren Ng</a>'s group, which is a part of the <a href="https://bair.berkeley.edu/">Berkeley AI Research Group</a>.
               </p>
               <p> My research interests include deep learning optimization, graphics, hardware acceleration and parallelization. My Berkeley alumnus website can be found <a href="https://cal.berkeley.edu/nithinraghavan">here</a>. 
               </p>
@@ -63,8 +63,8 @@
           <tr onmouseout="nightsight_stop()" onmouseover="nightsight_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
-                <div class="two" id='nightsight_image'><img src='images/depthseg.png'></div>
-                <img src='images/depthseg.png'>
+                <div class="two" id='nightsight_image'><img src='images/glossyindir2.png'></div>
+                <img src='images/glossyindir.png'>
               </div>
               <script type="text/javascript">
                 function nightsight_start() {
@@ -78,18 +78,23 @@
               </script>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2012.00238">
-                <papertitle>Sim2Real for Self-Supervised Monocular Depth and Segmentation</papertitle>
+              <a href="https://cseweb.ucsd.edu/~viscomp/projects/EGSR23NeRT/">
+                <papertitle>Neural Free-Viewpoint Relighting for Glossy Indirect Illumination</papertitle>
               </a>
               <br>
-              <strong>Nithin Raghavan</strong>,
-              <a href="https://www.jaychakravarty.com/">Punarjay Chakravarty</a>,
-              <a href="https://www.linkedin.com/in/shubshrivastava">Shubham Shrivastava</a>
+              <strong>Nithin Raghavan*</strong>,
+              <a href="">Yan Xiao*</a>,
+              <a href="https://cseweb.ucsd.edu/~k2lin/">Kai-En Lin</a>,
+              <a href="http://kevinkingo.com/">Tiancheng Sun</a>,
+              <a href="https://sai-bi.github.io/">Sai Bi</a>,
+              <a href="https://cseweb.ucsd.edu/~zex014/">Zexiang Xu</a>,
+              <a href="https://cseweb.ucsd.edu/~tzli/">Tzu-Mao Li</a>,
+              <a href="https://cseweb.ucsd.edu/~ravir/">Ravi Ramamoorthi</a>
               <br>
-	      <em>ArXiv Preprint</em>, 2020
+	      <em>Computer Graphics Forum (Proc. EGSR)</em>, 2023
               <br>
               <p></p>
-              <p>A twin VAE-based architecture with a shared latent space and auxiliary decoders is able to bridge the sim2real gap and produce real depth and segmentation maps without requiring any paired, ground-truth data in the real domain.</p>
+	      <p>PRT-inspired hybrid neural-wavelet architectures trained on images can learn a scene's global illumination light transport tensor. Decoupling relighting from scene information as well as prediction in an orthonormal basis enable generalization to novel view and novel lighting conditions for many complex effects, such as rotating caustics.</p>
             </td>
           </tr>
 
@@ -115,7 +120,7 @@
               </script>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://people.eecs.berkeley.edu/~bmild/fourfeat/index.html">
+              <a href="https://bmild.github.io/fourfeat/">
                 <papertitle>Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains</papertitle>
               </a>
               <br>
@@ -143,59 +148,6 @@
 
         </tbody></table>
 
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tr>
-            <td>
-              <heading>Experience</heading>
-            </td>
-          </tr>
-        </tbody></table>
-        <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle"><img src="images/ford.jpg"></td>
-            <td width="75%" valign="center">
-		    <a href="https://www.ford.com/">Ford Motor Company</a>
-		    <br>
-		    Research Intern
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle"><img src="images/samsung.jpg"></td>
-            <td width="75%" valign="center">
-		    <a href="https://www.samsung.com/">Samsung Advanced Computing Lab</a>
-		    <br>
-		    Research Intern
-            </td>
-          </tr>
-        </tbody></table>
-
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tr>
-            <td>
-	    <heading>
-	    <a href="game.html" class="nounderline"><font color="black" size="5">Personal Projects</font></a>
-		    </heading>
-            </td>
-          </tr>
-        </tbody></table>
-        <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle"><img src="images/sine.jpg"></td>
-            <td width="75%" valign="center">
-		    <a href="https://github.com/rnithin1/compressed-sensing">Compressed Sensing</a>
-		    <br>
-		    Computes LASSO on the matrix-vector product representation of the discrete wavelet transform of an input signal with orthogonal Daubechies wavelets for compression and data preprocessing
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle"><img src="images/triangle.jpg"></td>
-            <td width="75%" valign="center">
-		    <a href="https://github.com/rnithin1/software-renderer">Software Renderer</a>
-		    <br>
-		    Basic software rasterizer and renderer (requires SDL2). Capable of barycentric interpolation, backface culling and block-based rasterization.
-            </td>
-          </tr>
-        </tbody></table>
         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
           <tr>
             <td>
