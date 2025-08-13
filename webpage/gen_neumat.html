@@ -2,26 +2,89 @@
 <!-- saved from url=(0053)https://cseweb.ucsd.edu/~viscomp/projects/EGSR23NeRT/ -->
 <html class="fontawesome-i2svg-active fontawesome-i2svg-complete"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
-  <meta name="description" content="Hybrid neural-wavelet architectures trained on images are capable of learning a scene&#39;s light transport tensor.">
-  <meta name="keywords" content="PRT, NeRT">
+  <meta name="description" content="Generative Neural Materials: Image-conditioned diffusion models for neural materials with universal MLP architecture.">
+  <meta name="keywords" content="Neural Materials, Diffusion Models, BTF, Computer Graphics">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Neural Free-Viewpoint Relighting for Glossy Indirect Illumination</title>
+  <title>Generative Neural Materials</title>
 
   <style type="text/css">svg:not(:root).svg-inline--fa{overflow:visible}.svg-inline--fa{display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em}.svg-inline--fa.fa-lg{vertical-align:-.225em}.svg-inline--fa.fa-w-1{width:.0625em}.svg-inline--fa.fa-w-2{width:.125em}.svg-inline--fa.fa-w-3{width:.1875em}.svg-inline--fa.fa-w-4{width:.25em}.svg-inline--fa.fa-w-5{width:.3125em}.svg-inline--fa.fa-w-6{width:.375em}.svg-inline--fa.fa-w-7{width:.4375em}.svg-inline--fa.fa-w-8{width:.5em}.svg-inline--fa.fa-w-9{width:.5625em}.svg-inline--fa.fa-w-10{width:.625em}.svg-inline--fa.fa-w-11{width:.6875em}.svg-inline--fa.fa-w-12{width:.75em}.svg-inline--fa.fa-w-13{width:.8125em}.svg-inline--fa.fa-w-14{width:.875em}.svg-inline--fa.fa-w-15{width:.9375em}.svg-inline--fa.fa-w-16{width:1em}.svg-inline--fa.fa-w-17{width:1.0625em}.svg-inline--fa.fa-w-18{width:1.125em}.svg-inline--fa.fa-w-19{width:1.1875em}.svg-inline--fa.fa-w-20{width:1.25em}.svg-inline--fa.fa-pull-left{margin-right:.3em;width:auto}.svg-inline--fa.fa-pull-right{margin-left:.3em;width:auto}.svg-inline--fa.fa-border{height:1.5em}.svg-inline--fa.fa-li{width:2em}.svg-inline--fa.fa-fw{width:1.25em}.fa-layers svg.svg-inline--fa{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.fa-layers{display:inline-block;height:1em;position:relative;text-align:center;vertical-align:-.125em;width:1em}.fa-layers svg.svg-inline--fa{-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter,.fa-layers-text{display:inline-block;position:absolute;text-align:center}.fa-layers-text{left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter{background-color:#ff253a;border-radius:1em;-webkit-box-sizing:border-box;box-sizing:border-box;color:#fff;height:1.5em;line-height:1;max-width:5em;min-width:1.5em;overflow:hidden;padding:.25em;right:0;text-overflow:ellipsis;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-bottom-right{bottom:0;right:0;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom right;transform-origin:bottom right}.fa-layers-bottom-left{bottom:0;left:0;right:auto;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom left;transform-origin:bottom left}.fa-layers-top-right{right:0;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-top-left{left:0;right:auto;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top left;transform-origin:top left}.fa-lg{font-size:1.3333333333em;line-height:.75em;vertical-align:-.0667em}.fa-xs{font-size:.75em}.fa-sm{font-size:.875em}.fa-1x{font-size:1em}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-6x{font-size:6em}.fa-7x{font-size:7em}.fa-8x{font-size:8em}.fa-9x{font-size:9em}.fa-10x{font-size:10em}.fa-fw{text-align:center;width:1.25em}.fa-ul{list-style-type:none;margin-left:2.5em;padding-left:0}.fa-ul>li{position:relative}.fa-li{left:-2em;position:absolute;text-align:center;width:2em;line-height:inherit}.fa-border{border:solid .08em #eee;border-radius:.1em;padding:.2em .25em .15em}.fa-pull-left{float:left}.fa-pull-right{float:right}.fa.fa-pull-left,.fab.fa-pull-left,.fal.fa-pull-left,.far.fa-pull-left,.fas.fa-pull-left{margin-right:.3em}.fa.fa-pull-right,.fab.fa-pull-right,.fal.fa-pull-right,.far.fa-pull-right,.fas.fa-pull-right{margin-left:.3em}.fa-spin{-webkit-animation:fa-spin 2s infinite linear;animation:fa-spin 2s infinite linear}.fa-pulse{-webkit-animation:fa-spin 1s infinite steps(8);animation:fa-spin 1s infinite steps(8)}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.fa-rotate-90{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.fa-rotate-180{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.fa-rotate-270{-webkit-transform:rotate(270deg);transform:rotate(270deg)}.fa-flip-horizontal{-webkit-transform:scale(-1,1);transform:scale(-1,1)}.fa-flip-vertical{-webkit-transform:scale(1,-1);transform:scale(1,-1)}.fa-flip-both,.fa-flip-horizontal.fa-flip-vertical{-webkit-transform:scale(-1,-1);transform:scale(-1,-1)}:root .fa-flip-both,:root .fa-flip-horizontal,:root .fa-flip-vertical,:root .fa-rotate-180,:root .fa-rotate-270,:root .fa-rotate-90{-webkit-filter:none;filter:none}.fa-stack{display:inline-block;height:2em;position:relative;width:2.5em}.fa-stack-1x,.fa-stack-2x{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.svg-inline--fa.fa-stack-1x{height:1em;width:1.25em}.svg-inline--fa.fa-stack-2x{height:2em;width:2.5em}.fa-inverse{color:#fff}.sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.sr-only-focusable:active,.sr-only-focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}.svg-inline--fa .fa-primary{fill:var(--fa-primary-color,currentColor);opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa .fa-secondary{fill:var(--fa-secondary-color,currentColor);opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-primary{opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-secondary{opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa mask .fa-primary,.svg-inline--fa mask .fa-secondary{fill:#000}.fad.fa-inverse{color:#fff}</style><link href="./Neural Free-Viewpoint Relighting for Glossy Indirect Illumination_files/css" rel="stylesheet">
 
-  <link rel="stylesheet" href="./Neural Free-Viewpoint Relighting for Glossy Indirect Illumination_files/bulma.min.css">
-  <link rel="stylesheet" href="./Neural Free-Viewpoint Relighting for Glossy Indirect Illumination_files/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./Neural Free-Viewpoint Relighting for Glossy Indirect Illumination_files/bulma-slider.min.css">
-  <link rel="stylesheet" href="./Neural Free-Viewpoint Relighting for Glossy Indirect Illumination_files/fontawesome.all.min.css">
-  <link rel="stylesheet" href="./Neural Free-Viewpoint Relighting for Glossy Indirect Illumination_files/academicons.min.css">
-  <link rel="stylesheet" href="./Neural Free-Viewpoint Relighting for Glossy Indirect Illumination_files/index.css">
+  <link rel="stylesheet" href="./gen_neumat_js/bulma.min.css">
+  <link rel="stylesheet" href="./gen_neumat_js/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./gen_neumat_js/bulma-slider.min.css">
+  <link rel="stylesheet" href="./gen_neumat_js/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./gen_neumat_js/academicons.min.css">
+  <link rel="stylesheet" href="./gen_neumat_js/index.css">
   <link rel="icon" href="https://cseweb.ucsd.edu/~viscomp/projects/EGSR23NeRT/static/images/favicon.png">
+  
+  <style>
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .video-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #f5f5f5;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    
+    .video-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    
+    .video-item video {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      max-width: 400px;
+    }
+    
+    .video-caption {
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-align: center;
+      color: #333;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .video-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+      }
+      
+      .video-item {
+        padding: 0.75rem;
+      }
+      
+      .video-caption {
+        font-size: 0.8rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .video-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+  </style>
 
-  <script src="./Neural Free-Viewpoint Relighting for Glossy Indirect Illumination_files/jquery.min.js.download"></script>
-  <script defer="" src="./Neural Free-Viewpoint Relighting for Glossy Indirect Illumination_files/fontawesome.all.min.js.download"></script>
-  <script src="./Neural Free-Viewpoint Relighting for Glossy Indirect Illumination_files/bulma-carousel.min.js.download"></script>
-  <script src="./Neural Free-Viewpoint Relighting for Glossy Indirect Illumination_files/bulma-slider.min.js.download"></script>
-  <script src="./Neural Free-Viewpoint Relighting for Glossy Indirect Illumination_files/index.js.download"></script>
+  <script src="./gen_neumat_js/jquery.min.js.download"></script>
+  <script defer="" src="./gen_neumat_js/fontawesome.all.min.js.download"></script>
+  <script src="./gen_neumat_js/bulma-carousel.min.js.download"></script>
+  <script src="./gen_neumat_js/bulma-slider.min.js.download"></script>
+  <script src="./gen_neumat_js/index.js.download"></script>
 </head>
 <body>
 
@@ -31,26 +94,20 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Neural Free-Viewpoint Relighting for Glossy Indirect Illumination</h1>
+          <h1 class="title is-1 publication-title">Generative Neural Materials</h1>
           <div class="is-size-6 publication-authors">
             <span class="author-block">
               <a href="https://cseweb.ucsd.edu/~n2raghavan/">Nithin Raghavan*</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://cseweb.ucsd.edu/~viscomp/projects/EGSR23NeRT/">Yan Xiao*</a><sup>1</sup>,</span>
+              <a href="#">Krishna Mullia*</a><sup>2</sup>,</span>
             <span class="author-block">
-              <a href="https://cseweb.ucsd.edu/~k2lin/">Kai-En Lin</a><sup>1</sup>,
+              <a href="https://cseweb.ucsd.edu/~k2lin/">Alex Trevithick</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="http://kevinkingo.com/">Tiancheng Sun</a><sup>2</sup>,
+              <a href="http://kevinkingo.com/">Fujun Luan</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="https://sai-bi.github.io/">Sai Bi</a><sup>3</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://cseweb.ucsd.edu/~zex014/">Zexiang Xu</a><sup>3</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://cseweb.ucsd.edu/~tzli/">Tzu-Mao Li</a><sup>1</sup>,
+              <a href="https://sai-bi.github.io/">Milos Hasan</a><sup>2</sup>,
             </span>
             <span class="author-block">
               <a href="https://cseweb.ucsd.edu/~ravir/">Ravi Ramamoorthi</a><sup>1</sup>
@@ -59,8 +116,7 @@
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>UC San Diego,</span>
-            <span class="author-block"><sup>2</sup>Google,</span>
-	    <span class="author-block"><sup>3</sup>Adobe Research</span> <br>
+            <span class="author-block"><sup>2</sup>Adobe Research</span> <br>
             <span class="author-block"><sup>*</sup>Denotes equal contribution</span>
           </div>
 
@@ -68,7 +124,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2307.06335.pdf" class="external-link button is-normal is-rounded is-dark">
+                <a href="https://dl.acm.org/doi/10.1145/3721238.3730746" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path></svg><!-- <i class="fas fa-file-pdf"></i> Font Awesome fontawesome.com -->
                   </span>
@@ -76,16 +132,16 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2307.06335" class="external-link button is-normal is-rounded is-dark">
+                <a href="https://arxiv.org" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>arXiv</span>
+                  <span>arXiv (coming soon)</span>
                 </a>
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://cseweb.ucsd.edu/~viscomp/projects/EGSR23NeRT/" class="external-link button is-normal is-rounded is-dark">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
                   </span>
@@ -104,9 +160,12 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="./Neural Free-Viewpoint Relighting for Glossy Indirect Illumination_files/teaser.png">
+      <video autoplay muted loop playsinline>
+        <source src="data/teaser_hero_video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
       <h2 class="subtitle has-text-centered">
-        Our method is able to generalize complex global illumination effects under novel view and lighting conditions, such as the specular reflections on the horse and the overall shape of the caustic.
+        This scene consists solely of neural materials rendered with our universal pipeline, both fit manually and generated from our single shot image-to-material pipeline.
       </h2>
     </div>
   </div>
@@ -118,38 +177,413 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-	  <p>
-	  Precomputed Radiance Transfer (PRT) remains an attractive solution for real-time rendering of complex light transport effects such as glossy global illumination. After precomputation, we can relight the scene with new environment maps while changing viewpoint in real-time. However, practical PRT methods are usually limited to low-frequency spherical harmonic lighting. All-frequency techniques using wavelets are promising but have so far had little practical impact.
-	  </p>
+          <p>
+            Advancements in neural rendering techniques have sparked renewed interest
+            in neural materials, which are capable of representing bidirectional texture
+            functions (BTFs) cheaply and with high quality. However, content creation in
+            the neural material format is not straightforward. To address this limitation,
+            we present the first image-conditioned diffusion model for neural materials,
+            and show an extension to text conditioning. 
 
-	  <p>
-	  In this paper, we demonstrate a hybrid neural-wavelet PRT solution to high-frequency indirect illumination, including glossy reflection, for relighting with changing view. Specifically, we seek to represent the light transport function in the Haar wavelet basis. For global illumination, we learn the wavelet transport using a small multi-layer perceptron (MLP) applied to a feature field as a function of spatial location and wavelet index, with reflected direction and material parameters being other MLP inputs. We optimize the feature field (compactly represented by a tensor decomposition) and MLP parameters from multiple images of the scene under different lighting and viewing conditions. 
-	  </p>
+            To achieve this, we make two main contributions:
+          </p>
+          <p>
+            First, we introduce a universal MLP variant of the NeuMIP
+            architecture, defining a universal basis for neural materials as 16-channel
+            feature textures.
+          </p>
+            
+          <p>
+            Second, we train a conditional diffusion model for generating
+            neural materials in this basis from flash images, natural images and text
+            prompts. To achieve this, we also construct a new dataset of 150k neural materials.
+          </p>
 
-	  <p>
-	    We demonstrate real-time (512 x 512 at 24 FPS, 800 x 600 at 13 FPS) precomputed rendering of challenging scenes involving view-dependent reflections and even caustics.
-	  </p>
+          <p>
+            We demonstrate real-time decoding performance for our universal materials at 1024 x 1024.
+          </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
-
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
+    
+    <!-- Video Grid -->
+    <div class="columns is-centered">
       <div class="column">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <video id="papervideo" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-            <source src="./static/videos/V6.mp4" type="video/mp4">
-          </video>
+        <h2 class="title is-3">Videos: Universal Neural BTF Basis</h2>
+        <div class="video-grid">
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/universal_videos/materials_leather_chesterfield_preset_dark_brown_leather_random_2_seed95_seed95_last.ckpt_0/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Leather Chesterfield</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/universal_videos/materials_fabric_molle_system_fabric_lizard_camouflage_preset_dirty_lizard_camo_random_0_seed32_seed32_last.ckpt_1/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Fabric Camouflage</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/universal_videos/0_1_last.ckpt_2/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Material 3</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/universal_videos/materials_ground_eroded_mud_wall_default_seed76_seed76_last.ckpt_3/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Eroded Mud Wall</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/universal_videos/materials_metal_stylized_ancient_chinese_armor_preset_damaged_shiny_armor_random_1_seed80_seed80_last.ckpt_4/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Ancient Chinese Armor</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/universal_videos/materials_concrete_asphalt_concrete_wall_void_emboss_pattern_default_random_2_seed2_seed2_last.ckpt_5/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Concrete Wall</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/universal_videos/materials_metal_stylized_casting_melted_metal_preset_hot_metal_random_2_seed36_seed36_last.ckpt_6/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Melted Metal</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/universal_videos/materials_ceramic_italian_venice_floor_mosaic_tile_default_random_1_seed7_seed7_last.ckpt_7/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Venice Mosaic Tile</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/universal_videos/materials_ceramic_regular_ceramic_tiles_preset_oxidized_weave_tiles_random_2_seed61_seed61_last.ckpt_8/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Ceramic Tiles</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/universal_videos/materials_concrete_asphalt_paved_train_tracks_preset_simple_train_rail_random_0_seed5_seed5_last.ckpt_9/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Train Tracks</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/universal_videos/materials_fabric_stylized_cable_knit_wool_preset_damaged_burnt_orange_wool_random_3_seed53_seed53_last.ckpt_10/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Cable Knit Wool</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/universal_videos/materials_ground_dry_rocky_cracked_mud_01_default_seed66_seed66_last.ckpt_11/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Dry Rocky Mud</p>
+          </div>
         </div>
       </div>
     </div>
+    
+    <!-- Generated Materials: Flash Images -->
+    <div class="columns is-centered">
+      <div class="column">
+        <h2 class="title is-3">Generated Materials: Flash Images</h2>
+        <div class="video-grid">
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/9-19_IMG_0370.png_2.ckpt_92/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">IMG_0370</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/IMG_5994.png_3.ckpt_77/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">IMG_5994</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/IMG_0933.png_2.ckpt_32/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">IMG_0933</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/IMG_7630.png_3.ckpt_23/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">IMG_7630</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/9-19_IMG_0360.png_2.ckpt_18/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">IMG_0360</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/IMG_0056.png_2.ckpt_65/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">IMG_0056</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/IMG_0821.png_1.ckpt_60/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">IMG_0821</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/IMG_1056.png_2.ckpt_90/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">IMG_1056</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/IMG_6869.png_2.ckpt_81/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">IMG_6869</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/IMG_0854.png_2.ckpt_52/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">IMG_0854</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/IMG_1109.png_0.ckpt_1/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">IMG_1109</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/IMG_7088.png_2.ckpt_30/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">IMG_7088</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/IMG_5151.png_0.ckpt_89/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">IMG_5151</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/IMG_9066.png_3.ckpt_28/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">IMG_9066</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/IMG_1019.png_3.ckpt_43/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">IMG_1019</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/IMG_0299.png_2.ckpt_26/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">IMG_0299</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Generated Materials: Casual Captures -->
+    <div class="columns is-centered">
+      <div class="column">
+        <h2 class="title is-3">Generated Materials: Casual Captures</h2>
+        <div class="video-grid">
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/cat.jpg_3.ckpt_47/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Cat</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/cardboard.jpg_3.ckpt_67/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Cardboard</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/basket.jpg_1.ckpt_78/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Basket</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/birds.jpg_0.ckpt_0/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Birds</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/blanket.jpg_3.ckpt_13/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Blanket</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/floor.jpg_0.ckpt_50/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Floor</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/lamp.jpg_3.ckpt_35/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Lamp</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/pillar.jpg_3.ckpt_5/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Pillar</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/plaid.jpg_0.ckpt_17/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Plaid</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/sponge.jpg_2.ckpt_70/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Sponge</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Generated Materials: Text-to-Image -->
+    <div class="columns is-centered">
+      <div class="column">
+        <h2 class="title is-3">Generated Materials: Text-to-Image</h2>
+        <div class="video-grid">
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/Bumpy uneven texture of an orange peel_1.ckpt_82/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Bumpy Orange Peel Texture</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/Soft cloud-like texture of a floating island_3.ckpt_38/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Cloud-like Floating Island</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/texture_of_dragon_etched_glass_0.ckpt_87/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Dragon Etched Glass</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/texture_of_dragon-embossed_printed_circuit_board_0.ckpt_72/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Dragon Circuit Board</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/Flaky crumbly texture of a fresh croissant_3.ckpt_22/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Flaky Croissant Texture</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/Velvety luminescent petals of a night-blooming flower_0.ckpt_20/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Luminescent Flower Petals</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/polished concrete_2.ckpt_4/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Polished Concrete</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/old worn out hardwood floor_3.ckpt_12/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Old Worn Hardwood Floor</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/dirty concrete_2.ckpt_85/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Dirty Concrete</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/wooden panels red oak_4.ckpt_55/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Wooden Panels Red Oak</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/crochet pattern_3.ckpt_86/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Crochet Pattern</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/black shiny ceramic floor tiles_3.ckpt_45/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Black Shiny Ceramic Tiles</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/red rock cliff_2.ckpt_2/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Red Rock Cliff</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/brown matte leather_2.ckpt_84/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Brown Matte Leather</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/animal skin leopard_3.ckpt_14/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Animal Skin Leopard</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/linen fabric_3.ckpt_73/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Linen Fabric</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/red glossy leather_0.ckpt_80/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Red Glossy Leather</p>
+          </div>
+          <div class="video-item">
+            <video autoplay controls muted loop playsinline>
+              <source src="data/diffusion_videos/green moss_0.ckpt_44/render.mp4" type="video/mp4">
+            </video>
+            <p class="video-caption">Green Moss</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <div class="columns is-centered has-text-centered">
       <div class="column">
         <h2 class="title is-3">Pipeline</h2>
         <div class="publication-video">
-	    <img src="./Neural Free-Viewpoint Relighting for Glossy Indirect Illumination_files/pipeline.png">
+	    <img src="./pipeline.png">
         </div>
       </div>
     </div>
@@ -249,11 +683,15 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{raghavanxiao2023nert,
-  author    = {Raghavan, Nithin and Xiao, Yan and Lin, Kai-En and Sun, Tiancheng and Bi, Sai and Xu, Zexiang and Li, Tzu-Mao and Ramamoorthi, Ravi},
-  title     = {Neural Free-Viewpoint Relighting for Glossy Indirect Illumination},
-  journal   = {Computer Graphics Forum (Proc. EGSR 2023)},
-  year      = {2023},
+    <pre><code>@article{raghavan2024generative,
+  author    = {Raghavan, Nithin and Mullia, Krishna and Trevithick, Alex and Luan, Fujun and Hasan, Milos and Ramamoorthi, Ravi},
+  title     = {Generative Neural Materials},
+  journal   = {ACM Transactions on Graphics (SIGGRAPH 2024)},
+  volume    = {43},
+  number    = {4},
+  pages     = {1--15},
+  year      = {2024},
+  doi       = {10.1145/3721238.3730746}
 }</code></pre>
   </div>
 </section>
