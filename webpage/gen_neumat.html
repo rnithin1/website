@@ -909,106 +909,18 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Changing Viewpoint</h2>
-          <p>
-	      Our method is able to render scenes under arbitrary view. For the Four Animals
-	      scene, note how the mirror reflections slide across the horse, and note how 
-	      the reflective caustic part of the reflection within the ring remains
-	      view-independent. Also, note how for the diffuse Armadillo scene all the 
-	      interreflections remain view-independent.
-          </p>
-          <video id="dollyzoom" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-            <source src="./static/videos/changing_view.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Changing Lighting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-		Our method is able to handle changing lighting conditions. For the Kitchen
-		scene, note the reflections on the backboard of the stove. For the Armadillo
-		scene, note how the diffuse interreflections remain unchanged.
-            </p>
-            <video id="matting-video" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-              <source src="./static/videos/changing_light.mp4" type="video/mp4">
-            </video>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <!--/ Matting. -->
-</div></section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Rotating Caustics</h2>
-          <p>
-	  	Our method is able to generalize complex illumination conditions under
-		novel view and lighting conditions better than previous work. Note the
-		rotation of the caustic within the ring, as well as the glossy
-		interreflections of the animals on the ground.
-          </p>
-          <video id="dollyzoom" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-            <source src="./static/videos/rotating_caustic.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Lack of Tone Shifting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-	    	Our method is able to generalize to any novel lighting condition, including
-		those far from training. By predicting in an orthonormal basis (Haar wavelets),
-		we can recover the correct shading much more accurately than if the lighting
-		were predicted directly via neural network.
-            </p>
-            <video id="matting-video" autoplay="" controls="" muted="" loop="" playsinline="" height="100%">
-              <source src="./static/videos/toneshift.mp4" type="video/mp4">
-            </video>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <!--/ Matting. -->
-</div></section>
-
-
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{raghavan2024generative,
-  author    = {Raghavan, Nithin and Mullia, Krishna and Trevithick, Alex and Luan, Fujun and Hasan, Milos and Ramamoorthi, Ravi},
+    <pre><code>@article{raghavanmullia2024genneumat,
+  author    = {Raghavan, Nithin and Mullia, Krishna and Trevithick, Alexander and Luan, Fujun and Ha\v{s}an, Milo\v{s} and Ramamoorthi, Ravi},
   title     = {Generative Neural Materials},
-  journal   = {ACM Transactions on Graphics (SIGGRAPH 2024)},
+  year      = {2025},
+  isbn      = {9798400715402},
+  series    = {SIGGRAPH Conference Papers '25},
   volume    = {43},
-  number    = {4},
-  pages     = {1--15},
-  year      = {2024},
+  articleno = {162},
+  pages     = {11},
   doi       = {10.1145/3721238.3730746}
 }</code></pre>
   </div>
