@@ -56,6 +56,29 @@
       color: #333;
     }
     
+    .video-with-condition {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+    }
+    
+    .condition-image {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 2px solid #ddd;
+      flex-shrink: 0;
+    }
+    
+    .video-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
     /* Responsive adjustments */
     @media (max-width: 768px) {
       .video-grid {
@@ -294,100 +317,180 @@
         <h2 class="title is-3">Generated Materials: Flash Images</h2>
         <div class="video-grid">
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/9-19_IMG_0370.png_2.ckpt_92/render.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">IMG_0370</p>
+            <div class="video-with-condition">
+              <img src="data/conditions/IMG_0370_condition.png" alt="Condition" class="condition-image">
+              <div class="video-container">
+                <video autoplay controls muted loop playsinline>
+                  <source src="data/diffusion_videos/9-19_IMG_0370.png_2.ckpt_92/render.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">IMG_0370</p>
+              </div>
+            </div>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/IMG_5994.png_3.ckpt_77/render.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">IMG_5994</p>
+            <div class="video-with-condition">
+              <img src="data/conditions/IMG_5994_condition.png" alt="Condition" class="condition-image">
+              <div class="video-container">
+                <video autoplay controls muted loop playsinline>
+                  <source src="data/diffusion_videos/IMG_5994.png_3.ckpt_77/render.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">IMG_5994</p>
+              </div>
+            </div>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/IMG_0933.png_2.ckpt_32/render.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">IMG_0933</p>
+            <div class="video-with-condition">
+              <img src="data/conditions/IMG_0933_condition.png" alt="Condition" class="condition-image">
+              <div class="video-container">
+                <video autoplay controls muted loop playsinline>
+                  <source src="data/diffusion_videos/IMG_0933.png_2.ckpt_32/render.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">IMG_0933</p>
+              </div>
+            </div>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/IMG_7630.png_3.ckpt_23/render.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">IMG_7630</p>
+            <div class="video-with-condition">
+              <img src="data/conditions/IMG_7630_condition.png" alt="Condition" class="condition-image">
+              <div class="video-container">
+                <video autoplay controls muted loop playsinline>
+                  <source src="data/diffusion_videos/IMG_7630.png_3.ckpt_23/render.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">IMG_7630</p>
+              </div>
+            </div>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/9-19_IMG_0360.png_2.ckpt_18/render.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">IMG_0360</p>
+            <div class="video-with-condition">
+              <img src="data/conditions/IMG_0360_condition.png" alt="Condition" class="condition-image">
+              <div class="video-container">
+                <video autoplay controls muted loop playsinline>
+                  <source src="data/diffusion_videos/9-19_IMG_0360.png_2.ckpt_18/render.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">IMG_0360</p>
+              </div>
+            </div>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/IMG_0056.png_2.ckpt_65/render.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">IMG_0056</p>
+            <div class="video-with-condition">
+              <img src="data/conditions/IMG_0056_condition.png" alt="Condition" class="condition-image">
+              <div class="video-container">
+                <video autoplay controls muted loop playsinline>
+                  <source src="data/diffusion_videos/IMG_0056.png_2.ckpt_65/render.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">IMG_0056</p>
+              </div>
+            </div>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/IMG_0821.png_1.ckpt_60/render.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">IMG_0821</p>
+            <div class="video-with-condition">
+              <img src="data/conditions/IMG_0821_condition.png" alt="Condition" class="condition-image">
+              <div class="video-container">
+                <video autoplay controls muted loop playsinline>
+                  <source src="data/diffusion_videos/IMG_0821.png_1.ckpt_60/render.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">IMG_0821</p>
+              </div>
+            </div>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/IMG_1056.png_2.ckpt_90/render.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">IMG_1056</p>
+            <div class="video-with-condition">
+              <img src="data/conditions/IMG_1056_condition.png" alt="Condition" class="condition-image">
+              <div class="video-container">
+                <video autoplay controls muted loop playsinline>
+                  <source src="data/diffusion_videos/IMG_1056.png_2.ckpt_90/render.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">IMG_1056</p>
+              </div>
+            </div>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/IMG_6869.png_2.ckpt_81/render.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">IMG_6869</p>
+            <div class="video-with-condition">
+              <img src="data/conditions/IMG_6869_condition.png" alt="Condition" class="condition-image">
+              <div class="video-container">
+                <video autoplay controls muted loop playsinline>
+                  <source src="data/diffusion_videos/IMG_6869.png_2.ckpt_81/render.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">IMG_6869</p>
+              </div>
+            </div>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/IMG_0854.png_2.ckpt_52/render.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">IMG_0854</p>
+            <div class="video-with-condition">
+              <img src="data/conditions/IMG_0854_condition.png" alt="Condition" class="condition-image">
+              <div class="video-container">
+                <video autoplay controls muted loop playsinline>
+                  <source src="data/diffusion_videos/IMG_0854.png_2.ckpt_52/render.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">IMG_0854</p>
+              </div>
+            </div>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/IMG_1109.png_0.ckpt_1/render.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">IMG_1109</p>
+            <div class="video-with-condition">
+              <img src="data/conditions/IMG_1109_condition.png" alt="Condition" class="condition-image">
+              <div class="video-container">
+                <video autoplay controls muted loop playsinline>
+                  <source src="data/diffusion_videos/IMG_1109.png_0.ckpt_1/render.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">IMG_1109</p>
+              </div>
+            </div>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/IMG_7088.png_2.ckpt_30/render.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">IMG_7088</p>
+            <div class="video-with-condition">
+              <img src="data/conditions/IMG_7088_condition.png" alt="Condition" class="condition-image">
+              <div class="video-container">
+                <video autoplay controls muted loop playsinline>
+                  <source src="data/diffusion_videos/IMG_7088.png_2.ckpt_30/render.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">IMG_7088</p>
+              </div>
+            </div>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/IMG_5151.png_0.ckpt_89/render.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">IMG_5151</p>
+            <div class="video-with-condition">
+              <img src="data/conditions/IMG_5151_condition.png" alt="Condition" class="condition-image">
+              <div class="video-container">
+                <video autoplay controls muted loop playsinline>
+                  <source src="data/diffusion_videos/IMG_5151.png_0.ckpt_89/render.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">IMG_5151</p>
+              </div>
+            </div>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/IMG_9066.png_3.ckpt_28/render.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">IMG_9066</p>
+            <div class="video-with-condition">
+              <img src="data/conditions/IMG_9066_condition.png" alt="Condition" class="condition-image">
+              <div class="video-container">
+                <video autoplay controls muted loop playsinline>
+                  <source src="data/diffusion_videos/IMG_9066.png_3.ckpt_28/render.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">IMG_9066</p>
+              </div>
+            </div>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/IMG_1019.png_3.ckpt_43/render.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">IMG_1019</p>
+            <div class="video-with-condition">
+              <img src="data/conditions/IMG_1019_condition.png" alt="Condition" class="condition-image">
+              <div class="video-container">
+                <video autoplay controls muted loop playsinline>
+                  <source src="data/diffusion_videos/IMG_1019.png_3.ckpt_43/render.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">IMG_1019</p>
+              </div>
+            </div>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/IMG_0299.png_2.ckpt_26/render.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">IMG_0299</p>
+            <div class="video-with-condition">
+              <img src="data/conditions/IMG_0299_condition.png" alt="Condition" class="condition-image">
+              <div class="video-container">
+                <video autoplay controls muted loop playsinline>
+                  <source src="data/diffusion_videos/IMG_0299.png_2.ckpt_26/render.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">IMG_0299</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -399,64 +502,114 @@
         <h2 class="title is-3">Generated Materials: Casual Captures</h2>
         <div class="video-grid">
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/cat.jpg_3.ckpt_47/render.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">Cat</p>
+            <div class="video-with-condition">
+              <img src="data/conditions/cat_condition.png" alt="Condition" class="condition-image">
+              <div class="video-container">
+                <video autoplay controls muted loop playsinline>
+                  <source src="data/diffusion_videos/cat.jpg_3.ckpt_47/render.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">Cat</p>
+              </div>
+            </div>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/cardboard.jpg_3.ckpt_67/render.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">Cardboard</p>
+            <div class="video-with-condition">
+              <img src="data/conditions/cardboard_condition.png" alt="Condition" class="condition-image">
+              <div class="video-container">
+                <video autoplay controls muted loop playsinline>
+                  <source src="data/diffusion_videos/cardboard.jpg_3.ckpt_67/render.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">Cardboard</p>
+              </div>
+            </div>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/basket.jpg_1.ckpt_78/render.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">Basket</p>
+            <div class="video-with-condition">
+              <img src="data/conditions/basket_condition.png" alt="Condition" class="condition-image">
+              <div class="video-container">
+                <video autoplay controls muted loop playsinline>
+                  <source src="data/diffusion_videos/basket.jpg_1.ckpt_78/render.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">Basket</p>
+              </div>
+            </div>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/birds.jpg_0.ckpt_0/render.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">Birds</p>
+            <div class="video-with-condition">
+              <img src="data/conditions/birds_condition.png" alt="Condition" class="condition-image">
+              <div class="video-container">
+                <video autoplay controls muted loop playsinline>
+                  <source src="data/diffusion_videos/birds.jpg_0.ckpt_0/render.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">Birds</p>
+              </div>
+            </div>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/blanket.jpg_3.ckpt_13/render.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">Blanket</p>
+            <div class="video-with-condition">
+              <img src="data/conditions/blanket_condition.png" alt="Condition" class="condition-image">
+              <div class="video-container">
+                <video autoplay controls muted loop playsinline>
+                  <source src="data/diffusion_videos/blanket.jpg_3.ckpt_13/render.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">Blanket</p>
+              </div>
+            </div>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/floor.jpg_0.ckpt_50/render.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">Floor</p>
+            <div class="video-with-condition">
+              <img src="data/conditions/floor_condition.png" alt="Condition" class="condition-image">
+              <div class="video-container">
+                <video autoplay controls muted loop playsinline>
+                  <source src="data/diffusion_videos/floor.jpg_0.ckpt_50/render.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">Floor</p>
+              </div>
+            </div>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/lamp.jpg_3.ckpt_35/render.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">Lamp</p>
+            <div class="video-with-condition">
+              <img src="data/conditions/lamp_condition.png" alt="Condition" class="condition-image">
+              <div class="video-container">
+                <video autoplay controls muted loop playsinline>
+                  <source src="data/diffusion_videos/lamp.jpg_3.ckpt_35/render.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">Lamp</p>
+              </div>
+            </div>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/pillar.jpg_3.ckpt_5/render.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">Pillar</p>
+            <div class="video-with-condition">
+              <img src="data/conditions/pillar_condition.png" alt="Condition" class="condition-image">
+              <div class="video-container">
+                <video autoplay controls muted loop playsinline>
+                  <source src="data/diffusion_videos/pillar.jpg_3.ckpt_5/render.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">Pillar</p>
+              </div>
+            </div>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/plaid.jpg_0.ckpt_17/render.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">Plaid</p>
+            <div class="video-with-condition">
+              <img src="data/conditions/plaid_condition.png" alt="Condition" class="condition-image">
+              <div class="video-container">
+                <video autoplay controls muted loop playsinline>
+                  <source src="data/diffusion_videos/plaid.jpg_0.ckpt_17/render.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">Plaid</p>
+              </div>
+            </div>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/sponge.jpg_2.ckpt_70/render.mp4" type="video/mp4">
-            </video>
-            <p class="video-caption">Sponge</p>
+            <div class="video-with-condition">
+              <img src="data/conditions/sponge_condition.png" alt="Condition" class="condition-image">
+              <div class="video-container">
+                <video autoplay controls muted loop playsinline>
+                  <source src="data/diffusion_videos/sponge.jpg_2.ckpt_70/render.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">Sponge</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
