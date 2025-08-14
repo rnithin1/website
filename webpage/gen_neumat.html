@@ -1095,11 +1095,14 @@
             video.setAttribute('loading', 'lazy');
           }
 
-          // Remove autoplay from all videos initially
+          // Remove autoplay from all videos initially and pause them
           video.removeAttribute('autoplay');
           video.setAttribute('muted', '');
           video.setAttribute('loop', '');
           video.setAttribute('playsinline', '');
+          
+          // Pause the video to prevent it from loading
+          video.pause();
 
           // Add loading state
           video.classList.add('video-loading');
@@ -1126,13 +1129,35 @@
         
         // Add click to load functionality
         placeholder.addEventListener('click', () => {
+          console.log('Video placeholder clicked, queueing video load');
           this.queueVideoLoad(video);
         });
+        
+        // Fallback: if lazy loading fails, allow direct loading after 5 seconds
+        setTimeout(() => {
+          if (video.placeholder && video.placeholder.parentNode) {
+            placeholder.innerHTML = '<div class="loading-spinner"></div><div style="margin-top: 10px; font-size: 0.8rem;">Click to load video (fallback)</div>';
+            placeholder.style.cursor = 'pointer';
+            placeholder.addEventListener('click', () => {
+              console.log('Fallback video loading triggered');
+              video.style.display = 'block';
+              video.setAttribute('autoplay', '');
+              video.load();
+              if (video.placeholder) {
+                video.placeholder.remove();
+              }
+            });
+          }
+        }, 5000);
       }
 
       queueVideoLoad(video) {
-        if (this.loadedVideos.has(video) || this.loadingQueue.includes(video)) return;
+        if (this.loadedVideos.has(video) || this.loadingQueue.includes(video)) {
+          console.log('Video already loaded or in queue, skipping');
+          return;
+        }
         
+        console.log('Adding video to loading queue');
         this.loadingQueue.push(video);
         this.processQueue();
       }
@@ -1147,6 +1172,15 @@
       loadVideo(video) {
         if (this.loadedVideos.has(video)) return;
         
+        // Check if video has a source
+        const source = video.querySelector('source');
+        if (!source || !source.src) {
+          console.error('Video has no source:', video);
+          this.onVideoError(video);
+          return;
+        }
+        
+        console.log('Loading video:', source.src);
         this.currentLoads++;
         this.loadedVideos.add(video);
         
@@ -1157,15 +1191,20 @@
 
         // Load video with optimized settings
         video.addEventListener('loadeddata', () => {
+          console.log('Video loaded successfully');
           this.onVideoLoaded(video);
         }, { once: true });
 
-        video.addEventListener('error', () => {
+        video.addEventListener('error', (e) => {
+          console.error('Video failed to load:', e);
           this.onVideoError(video);
         }, { once: true });
 
         // Start loading the video
         video.load();
+        
+        // Add autoplay back for visible videos
+        video.setAttribute('autoplay', '');
       }
 
       onVideoLoaded(video) {
@@ -1219,7 +1258,12 @@
     // Initialize video optimization when DOM is loaded
     document.addEventListener('DOMContentLoaded', () => {
       console.log('Initializing video optimizer...');
-      new VideoOptimizer();
+      try {
+        new VideoOptimizer();
+        console.log('Video optimizer initialized successfully');
+      } catch (error) {
+        console.error('Error initializing video optimizer:', error);
+      }
     });
 
     // Additional performance optimizations
@@ -1235,6 +1279,7 @@
             link.as = 'video';
             link.href = source.src;
             document.head.appendChild(link);
+            console.log(`Preloading video: ${source.src}`);
           }
         }
       });
@@ -1307,6 +1352,18 @@
         attributes: true, 
         attributeFilter: ['class'] 
       });
+      
+      // Test basic video functionality
+      setTimeout(() => {
+        const testVideo = document.querySelector('video');
+        if (testVideo) {
+          console.log('Test video found:', testVideo);
+          const source = testVideo.querySelector('source');
+          if (source) {
+            console.log('Test video source:', source.src);
+          }
+        }
+      }, 2000);
     });
   </script>
 
