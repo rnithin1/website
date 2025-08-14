@@ -1067,11 +1067,16 @@
         this.observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
-              this.queueVideoLoad(entry.target);
+              const placeholder = entry.target;
+              const video = placeholder.video;
+              if (video) {
+                console.log('Video placeholder came into view, loading video');
+                this.queueVideoLoad(video);
+              }
             }
           });
         }, {
-          rootMargin: '100px', // Start loading 100px before video comes into view
+          rootMargin: '200px', // Start loading 200px before video comes into view
           threshold: 0.1
         });
 
@@ -1109,16 +1114,20 @@
           
           // Create placeholder
           this.createPlaceholder(video);
-
-          // Observe video for lazy loading
-          this.observer.observe(video);
+          
+          // Load first 3 videos immediately
+          if (index < 3) {
+            setTimeout(() => {
+              this.queueVideoLoad(video);
+            }, 100 * index); // Stagger the loading
+          }
         });
       }
 
       createPlaceholder(video) {
         const placeholder = document.createElement('div');
         placeholder.className = 'video-placeholder';
-        placeholder.innerHTML = '<div class="loading-spinner"></div><div style="margin-top: 10px; font-size: 0.8rem;">Click to load video</div>';
+        placeholder.innerHTML = '<div class="loading-spinner"></div><div style="margin-top: 10px; font-size: 0.8rem;">Loading video...</div>';
         
         // Insert placeholder before video
         video.parentNode.insertBefore(placeholder, video);
@@ -1133,22 +1142,11 @@
           this.queueVideoLoad(video);
         });
         
-        // Fallback: if lazy loading fails, allow direct loading after 5 seconds
-        setTimeout(() => {
-          if (video.placeholder && video.placeholder.parentNode) {
-            placeholder.innerHTML = '<div class="loading-spinner"></div><div style="margin-top: 10px; font-size: 0.8rem;">Click to load video (fallback)</div>';
-            placeholder.style.cursor = 'pointer';
-            placeholder.addEventListener('click', () => {
-              console.log('Fallback video loading triggered');
-              video.style.display = 'block';
-              video.setAttribute('autoplay', '');
-              video.load();
-              if (video.placeholder) {
-                video.placeholder.remove();
-              }
-            });
-          }
-        }, 5000);
+        // Observe the placeholder instead of the video for intersection
+        this.observer.observe(placeholder);
+        
+        // Store reference to video in placeholder
+        placeholder.video = video;
       }
 
       queueVideoLoad(video) {
@@ -1205,6 +1203,11 @@
         
         // Add autoplay back for visible videos
         video.setAttribute('autoplay', '');
+        
+        // Also try to play the video
+        video.play().catch(() => {
+          console.log('Autoplay blocked, video will play on user interaction');
+        });
       }
 
       onVideoLoaded(video) {
@@ -1363,6 +1366,10 @@
             console.log('Test video source:', source.src);
           }
         }
+        
+        // Test intersection observer
+        const placeholders = document.querySelectorAll('.video-placeholder');
+        console.log(`Found ${placeholders.length} video placeholders`);
       }, 2000);
     });
   </script>
