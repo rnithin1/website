@@ -6,15 +6,6 @@
   <meta name="keywords" content="Neural Materials, Diffusion Models, BTF, Computer Graphics">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Generative Neural Materials</title>
-  
-  <!-- Performance optimizations -->
-  <link rel="dns-prefetch" href="//fonts.googleapis.com">
-  <link rel="preconnect" href="//fonts.googleapis.com">
-  <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
-  
-  <!-- Resource hints for faster loading -->
-  <link rel="preload" href="./gen_neumat_js/bulma.min.css" as="style">
-  <link rel="preload" href="./gen_neumat_js/index.css" as="style">
 
   <style type="text/css">svg:not(:root).svg-inline--fa{overflow:visible}.svg-inline--fa{display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em}.svg-inline--fa.fa-lg{vertical-align:-.225em}.svg-inline--fa.fa-w-1{width:.0625em}.svg-inline--fa.fa-w-2{width:.125em}.svg-inline--fa.fa-w-3{width:.1875em}.svg-inline--fa.fa-w-4{width:.25em}.svg-inline--fa.fa-w-5{width:.3125em}.svg-inline--fa.fa-w-6{width:.375em}.svg-inline--fa.fa-w-7{width:.4375em}.svg-inline--fa.fa-w-8{width:.5em}.svg-inline--fa.fa-w-9{width:.5625em}.svg-inline--fa.fa-w-10{width:.625em}.svg-inline--fa.fa-w-11{width:.6875em}.svg-inline--fa.fa-w-12{width:.75em}.svg-inline--fa.fa-w-13{width:.8125em}.svg-inline--fa.fa-w-14{width:.875em}.svg-inline--fa.fa-w-15{width:.9375em}.svg-inline--fa.fa-w-16{width:1em}.svg-inline--fa.fa-w-17{width:1.0625em}.svg-inline--fa.fa-w-18{width:1.125em}.svg-inline--fa.fa-w-19{width:1.1875em}.svg-inline--fa.fa-w-20{width:1.25em}.svg-inline--fa.fa-pull-left{margin-right:.3em;width:auto}.svg-inline--fa.fa-pull-right{margin-left:.3em;width:auto}.svg-inline--fa.fa-border{height:1.5em}.svg-inline--fa.fa-li{width:2em}.svg-inline--fa.fa-fw{width:1.25em}.fa-layers svg.svg-inline--fa{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.fa-layers{display:inline-block;height:1em;position:relative;text-align:center;vertical-align:-.125em;width:1em}.fa-layers svg.svg-inline--fa{-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter,.fa-layers-text{display:inline-block;position:absolute;text-align:center}.fa-layers-text{left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter{background-color:#ff253a;border-radius:1em;-webkit-box-sizing:border-box;box-sizing:border-box;color:#fff;height:1.5em;line-height:1;max-width:5em;min-width:1.5em;overflow:hidden;padding:.25em;right:0;text-overflow:ellipsis;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-bottom-right{bottom:0;right:0;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom right;transform-origin:bottom right}.fa-layers-bottom-left{bottom:0;left:0;right:auto;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom left;transform-origin:bottom left}.fa-layers-top-right{right:0;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-top-left{left:0;right:auto;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top left;transform-origin:top left}.fa-lg{font-size:1.3333333333em;line-height:.75em;vertical-align:-.0667em}.fa-xs{font-size:.75em}.fa-sm{font-size:.875em}.fa-1x{font-size:1em}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-6x{font-size:6em}.fa-7x{font-size:7em}.fa-8x{font-size:8em}.fa-9x{font-size:9em}.fa-10x{font-size:10em}.fa-fw{text-align:center;width:1.25em}.fa-ul{list-style-type:none;margin-left:2.5em;padding-left:0}.fa-ul>li{position:relative}.fa-li{left:-2em;position:absolute;text-align:center;width:2em;line-height:inherit}.fa-border{border:solid .08em #eee;border-radius:.1em;padding:.2em .25em .15em}.fa-pull-left{float:left}.fa-pull-right{float:right}.fa.fa-pull-left,.fab.fa-pull-left,.fal.fa-pull-left,.far.fa-pull-left,.fas.fa-pull-left{margin-right:.3em}.fa.fa-pull-right,.fab.fa-pull-right,.fal.fa-pull-right,.far.fa-pull-right,.fas.fa-pull-right{margin-left:.3em}.fa-spin{-webkit-animation:fa-spin 2s infinite linear;animation:fa-spin 2s infinite linear}.fa-pulse{-webkit-animation:fa-spin 1s infinite steps(8);animation:fa-spin 1s infinite steps(8)}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.fa-rotate-90{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.fa-rotate-180{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.fa-rotate-270{-webkit-transform:rotate(270deg);transform:rotate(270deg)}.fa-flip-horizontal{-webkit-transform:scale(-1,1);transform:scale(-1,1)}.fa-flip-vertical{-webkit-transform:scale(1,-1);transform:scale(1,-1)}.fa-flip-both,.fa-flip-horizontal.fa-flip-vertical{-webkit-transform:scale(-1,-1);transform:scale(-1,-1)}:root .fa-flip-both,:root .fa-flip-horizontal,:root .fa-flip-vertical,:root .fa-rotate-180,:root .fa-rotate-270,:root .fa-rotate-90{-webkit-filter:none;filter:none}.fa-stack{display:inline-block;height:2em;position:relative;width:2.5em}.fa-stack-1x,.fa-stack-2x{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.svg-inline--fa.fa-stack-1x{height:1em;width:1.25em}.svg-inline--fa.fa-stack-2x{height:2em;width:2.5em}.fa-inverse{color:#fff}.sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.sr-only-focusable:active,.sr-only-focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}.svg-inline--fa .fa-primary{fill:var(--fa-primary-color,currentColor);opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa .fa-secondary{fill:var(--fa-secondary-color,currentColor);opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-primary{opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-secondary{opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa mask .fa-primary,.svg-inline--fa mask .fa-secondary{fill:#000}.fad.fa-inverse{color:#fff}</style><link href="./Neural Free-Viewpoint Relighting for Glossy Indirect Illumination_files/css" rel="stylesheet">
 
@@ -42,7 +33,7 @@
       border-radius: 8px;
       padding: 1rem;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.2s ease;
     }
     
     .video-item:hover {
@@ -54,59 +45,17 @@
       width: 100%;
       height: auto;
       border-radius: 4px;
-      max-width: 100%; /* Changed from 400px to 100% for better responsiveness */
+      max-width: 400px;
     }
     
     .video-caption {
       margin-top: 0.75rem;
       font-size: 0.9rem;
       font-weight: 500;
-      color: #333;
       text-align: center;
+      color: #333;
     }
     
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .video-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1rem;
-      }
-      
-      .video-item {
-        padding: 0.75rem;
-      }
-      
-      .video-caption {
-        font-size: 0.8rem;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .video-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-    }
-    
-    @media (min-width: 1200px) {
-      .video-grid {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
-    
-    @media (min-width: 900px) and (max-width: 1199px) {
-      .video-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-    
-    @media (min-width: 600px) and (max-width: 899px) {
-      .video-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    
-    /* New CSS for Condition Images */
     .video-with-condition {
       display: flex;
       align-items: center;
@@ -130,54 +79,27 @@
       align-items: center;
     }
     
-    /* Video Loading Optimizations */
-    .video-placeholder {
-      width: 100%;
-      height: 200px;
-      background: linear-gradient(45deg, #f0f0f0 25%, transparent 25%), 
-                  linear-gradient(-45deg, #f0f0f0 25%, transparent 25%), 
-                  linear-gradient(45deg, transparent 75%, #f0f0f0 75%), 
-                  linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
-      background-size: 20px 20px;
-      background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #666;
-      font-size: 0.9rem;
-      position: relative;
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .video-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+      }
+      
+      .video-item {
+        padding: 0.75rem;
+      }
+      
+      .video-caption {
+        font-size: 0.8rem;
+      }
     }
     
-    .video-placeholder::after {
-      content: "▶";
-      font-size: 2rem;
-      color: #999;
-    }
-    
-    .video-loading {
-      opacity: 0.7;
-      transition: opacity 0.3s ease;
-    }
-    
-    .video-loaded {
-      opacity: 1;
-    }
-    
-    /* Loading spinner */
-    .loading-spinner {
-      width: 40px;
-      height: 40px;
-      border: 4px solid #f3f3f3;
-      border-top: 4px solid #3498db;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin: 20px auto;
-    }
-    
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    @media (max-width: 480px) {
+      .video-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
     }
   </style>
 
@@ -1049,329 +971,6 @@
           </tr>
         </tbody></table>
 
-    <!-- Video Optimization Script -->
-  <script>
-    // Video lazy loading and optimization
-    class VideoOptimizer {
-      constructor() {
-        this.loadedVideos = new Set();
-        this.observer = null;
-        this.loadingQueue = [];
-        this.maxConcurrentLoads = 3;
-        this.currentLoads = 0;
-        this.init();
-      }
 
-      init() {
-        // Initialize intersection observer for lazy loading
-        this.observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              const placeholder = entry.target;
-              const video = placeholder.video;
-              if (video) {
-                console.log('Video placeholder came into view, loading video');
-                this.queueVideoLoad(video);
-              }
-            }
-          });
-        }, {
-          rootMargin: '200px', // Start loading 200px before video comes into view
-          threshold: 0.1
-        });
-
-        // Replace all video elements with optimized versions
-        this.optimizeVideos();
-        
-        // Start processing the loading queue
-        this.processQueue();
-      }
-
-      optimizeVideos() {
-        const videoElements = document.querySelectorAll('video');
-        console.log(`Optimizing ${videoElements.length} videos for lazy loading`);
-        
-        videoElements.forEach((video, index) => {
-          // Only preload metadata for the first 3 videos
-          if (index < 3) {
-            video.setAttribute('preload', 'metadata');
-          } else {
-            video.setAttribute('preload', 'none');
-            video.setAttribute('loading', 'lazy');
-          }
-
-          // Remove autoplay from all videos initially and pause them
-          video.removeAttribute('autoplay');
-          video.setAttribute('muted', '');
-          video.setAttribute('loop', '');
-          video.setAttribute('playsinline', '');
-          
-          // Pause the video to prevent it from loading
-          video.pause();
-
-          // Add loading state
-          video.classList.add('video-loading');
-          
-          // Create placeholder
-          this.createPlaceholder(video);
-          
-          // Load first 3 videos immediately
-          if (index < 3) {
-            setTimeout(() => {
-              this.queueVideoLoad(video);
-            }, 100 * index); // Stagger the loading
-          }
-        });
-      }
-
-      createPlaceholder(video) {
-        const placeholder = document.createElement('div');
-        placeholder.className = 'video-placeholder';
-        placeholder.innerHTML = '<div class="loading-spinner"></div><div style="margin-top: 10px; font-size: 0.8rem;">Loading video...</div>';
-        
-        // Insert placeholder before video
-        video.parentNode.insertBefore(placeholder, video);
-        video.style.display = 'none';
-        
-        // Store reference to placeholder
-        video.placeholder = placeholder;
-        
-        // Add click to load functionality
-        placeholder.addEventListener('click', () => {
-          console.log('Video placeholder clicked, queueing video load');
-          this.queueVideoLoad(video);
-        });
-        
-        // Observe the placeholder instead of the video for intersection
-        this.observer.observe(placeholder);
-        
-        // Store reference to video in placeholder
-        placeholder.video = video;
-      }
-
-      queueVideoLoad(video) {
-        if (this.loadedVideos.has(video) || this.loadingQueue.includes(video)) {
-          console.log('Video already loaded or in queue, skipping');
-          return;
-        }
-        
-        console.log('Adding video to loading queue');
-        this.loadingQueue.push(video);
-        this.processQueue();
-      }
-
-      processQueue() {
-        while (this.currentLoads < this.maxConcurrentLoads && this.loadingQueue.length > 0) {
-          const video = this.loadingQueue.shift();
-          this.loadVideo(video);
-        }
-      }
-
-      loadVideo(video) {
-        if (this.loadedVideos.has(video)) return;
-        
-        // Check if video has a source
-        const source = video.querySelector('source');
-        if (!source || !source.src) {
-          console.error('Video has no source:', video);
-          this.onVideoError(video);
-          return;
-        }
-        
-        console.log('Loading video:', source.src);
-        this.currentLoads++;
-        this.loadedVideos.add(video);
-        
-        // Show loading state
-        if (video.placeholder) {
-          video.placeholder.innerHTML = '<div class="loading-spinner"></div><div style="margin-top: 10px; font-size: 0.8rem;">Loading video...</div>';
-        }
-
-        // Load video with optimized settings
-        video.addEventListener('loadeddata', () => {
-          console.log('Video loaded successfully');
-          this.onVideoLoaded(video);
-        }, { once: true });
-
-        video.addEventListener('error', (e) => {
-          console.error('Video failed to load:', e);
-          this.onVideoError(video);
-        }, { once: true });
-
-        // Start loading the video
-        video.load();
-        
-        // Add autoplay back for visible videos
-        video.setAttribute('autoplay', '');
-        
-        // Also try to play the video
-        video.play().catch(() => {
-          console.log('Autoplay blocked, video will play on user interaction');
-        });
-      }
-
-      onVideoLoaded(video) {
-        this.currentLoads--;
-        
-        // Remove placeholder and show video
-        if (video.placeholder) {
-          video.placeholder.remove();
-          video.placeholder = null;
-        }
-        
-        video.style.display = 'block';
-        video.classList.remove('video-loading');
-        video.classList.add('video-loaded');
-        
-        // Add autoplay back for visible videos
-        video.setAttribute('autoplay', '');
-        
-        // Add click to play functionality
-        video.addEventListener('click', () => {
-          if (video.paused) {
-            video.play().catch(() => {}); // Ignore autoplay errors
-          } else {
-            video.pause();
-          }
-        });
-        
-        // Process next video in queue
-        this.processQueue();
-      }
-
-      onVideoError(video) {
-        this.currentLoads--;
-        
-        if (video.placeholder) {
-          video.placeholder.innerHTML = '❌ Video failed to load<br><small>Click to retry</small>';
-          video.placeholder.style.color = '#e74c3c';
-          video.placeholder.style.cursor = 'pointer';
-          
-          video.placeholder.addEventListener('click', () => {
-            this.loadedVideos.delete(video);
-            this.queueVideoLoad(video);
-          });
-        }
-        
-        // Process next video in queue
-        this.processQueue();
-      }
-    }
-
-    // Initialize video optimization when DOM is loaded
-    document.addEventListener('DOMContentLoaded', () => {
-      console.log('Initializing video optimizer...');
-      try {
-        new VideoOptimizer();
-        console.log('Video optimizer initialized successfully');
-      } catch (error) {
-        console.error('Error initializing video optimizer:', error);
-      }
-    });
-
-    // Additional performance optimizations
-    document.addEventListener('DOMContentLoaded', () => {
-      // Preload critical resources
-      const criticalVideos = document.querySelectorAll('video');
-      criticalVideos.forEach((video, index) => {
-        if (index < 3) {
-          const source = video.querySelector('source');
-          if (source && source.src) {
-            const link = document.createElement('link');
-            link.rel = 'preload';
-            link.as = 'video';
-            link.href = source.src;
-            document.head.appendChild(link);
-            console.log(`Preloading video: ${source.src}`);
-          }
-        }
-      });
-
-      // Optimize scroll performance with throttling
-      let ticking = false;
-      let lastScrollTime = 0;
-      const scrollThrottle = 100; // ms
-      
-      function updateVideos() {
-        const videos = document.querySelectorAll('video.video-loaded');
-        videos.forEach(video => {
-          const rect = video.getBoundingClientRect();
-          const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-          
-          if (isVisible && video.paused) {
-            video.play().catch(() => {}); // Ignore autoplay errors
-          } else if (!isVisible && !video.paused) {
-            video.pause();
-          }
-        });
-        ticking = false;
-      }
-
-      window.addEventListener('scroll', () => {
-        const now = Date.now();
-        if (now - lastScrollTime > scrollThrottle) {
-          if (!ticking) {
-            requestAnimationFrame(updateVideos);
-            ticking = true;
-          }
-          lastScrollTime = now;
-        }
-      });
-      
-      // Add loading progress indicator
-      const progressBar = document.createElement('div');
-      progressBar.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 0%;
-        height: 3px;
-        background: linear-gradient(90deg, #3498db, #2ecc71);
-        z-index: 10000;
-        transition: width 0.3s ease;
-      `;
-      document.body.appendChild(progressBar);
-      
-      // Update progress based on loaded videos
-      const updateProgress = () => {
-        const totalVideos = document.querySelectorAll('video').length;
-        const loadedVideos = document.querySelectorAll('video.video-loaded').length;
-        const progress = (loadedVideos / totalVideos) * 100;
-        progressBar.style.width = progress + '%';
-        
-        if (progress >= 100) {
-          setTimeout(() => {
-            progressBar.style.opacity = '0';
-            setTimeout(() => progressBar.remove(), 300);
-          }, 1000);
-        }
-      };
-      
-      // Monitor video loading progress
-      const observer = new MutationObserver(updateProgress);
-      observer.observe(document.body, { 
-        childList: true, 
-        subtree: true, 
-        attributes: true, 
-        attributeFilter: ['class'] 
-      });
-      
-      // Test basic video functionality
-      setTimeout(() => {
-        const testVideo = document.querySelector('video');
-        if (testVideo) {
-          console.log('Test video found:', testVideo);
-          const source = testVideo.querySelector('source');
-          if (source) {
-            console.log('Test video source:', source.src);
-          }
-        }
-        
-        // Test intersection observer
-        const placeholders = document.querySelectorAll('.video-placeholder');
-        console.log(`Found ${placeholders.length} video placeholders`);
-      }, 2000);
-    });
-  </script>
 
 </body></html>
