@@ -892,7 +892,27 @@
       <div class="column">
         <h2 class="title is-3">Pipeline</h2>
         <div class="publication-video">
-	    <img src="./pipeline.png">
+          <img src="data/figures/fig-pipeline-rev-1.png" alt="Pipeline Overview" style="max-width: 100%; height: auto;">
+          <p class="has-text-centered" style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+            Overview of our pipeline. (a) Shows the data generation and training of the universal basis network. For each of 512 selected materials, 400 slices
+            of data are rendered, where each pixel contains a different camera and light direction. The 512 materials are jointly used to train (Offset and RGB) neural
+            textures, as well as corresponding MLPs. (b) Shows the training process for the full dataset of approximately 150,000 materials. For each material, training
+            data is rendered similarly as in (a), however, the universal MLPs are used with frozen weights to fit each material's neural texture. (c) The resulting 150,000
+            neural materials are used as training data for training the diffusion model
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">Network Architecture</h2>
+        <div class="publication-video">
+          <img src="data/figures/fig-networks-rev-1.png" alt="Network Architecture" style="max-width: 100%; height: auto;">
+          <p class="has-text-centered" style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+            Network Architecture (a) Shows our diffusion model's architecture, which can conditionally (image, or optionally text) generate a neural texture pair
+            (offset and RGB). (b) Shows how the neural textures are used for inference, i.e., render under a given (novel) camera and light(s)
+          </p>
         </div>
       </div>
     </div>
