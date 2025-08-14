@@ -41,11 +41,40 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
     
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+    }
+    
     .video-item video {
       width: 100%;
       height: auto;
       border-radius: 4px;
       max-width: 400px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .video-item video.loaded {
+      opacity: 1;
+    }
+    
+    .video-thumbnail {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 4px;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    
+    .video-thumbnail.hidden {
+      opacity: 0;
     }
     
     .video-caption {
@@ -108,6 +137,64 @@
   <script src="./gen_neumat_js/bulma-carousel.min.js.download"></script>
   <script src="./gen_neumat_js/bulma-slider.min.js.download"></script>
   <script src="./gen_neumat_js/index.js.download"></script>
+  
+  <script>
+    // Function to create video thumbnails
+    function createVideoThumbnails() {
+      const videos = document.querySelectorAll('video');
+      
+      videos.forEach(video => {
+        const videoContainer = video.closest('.video-container') || video.parentElement;
+        
+        // Create thumbnail canvas
+        const canvas = document.createElement('canvas');
+        canvas.className = 'video-thumbnail';
+        canvas.width = 400;
+        canvas.height = 300;
+        
+        // Insert canvas before video
+        videoContainer.insertBefore(canvas, video);
+        
+        // Set up video event listeners
+        video.addEventListener('loadeddata', function() {
+          // Draw first frame to canvas
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+        });
+        
+        // Hide thumbnail and show video when ready to play
+        video.addEventListener('canplay', function() {
+          setTimeout(() => {
+            canvas.classList.add('hidden');
+            video.classList.add('loaded');
+          }, 100); // Small delay to ensure smooth transition
+        }, { once: true });
+        
+        // Fallback: if video fails to load, keep thumbnail visible
+        video.addEventListener('error', function() {
+          console.warn('Video failed to load:', video.src);
+        });
+        
+        // Handle video loading state
+        video.addEventListener('loadstart', function() {
+          // Video is starting to load
+        });
+        
+        video.addEventListener('loadedmetadata', function() {
+          // Video metadata is loaded, we can get dimensions
+          if (video.videoWidth && video.videoHeight) {
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+          }
+        });
+      });
+    }
+    
+    // Initialize when DOM is ready
+    document.addEventListener('DOMContentLoaded', function() {
+      createVideoThumbnails();
+    });
+  </script>
 </head>
 <body>
 
@@ -236,75 +323,99 @@
         <h2 class="title is-3">Videos: Universal Neural BTF Basis</h2>
         <div class="video-grid">
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/universal_videos/materials_leather_chesterfield_preset_dark_brown_leather_random_2_seed95_seed95_last.ckpt_0/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/universal_videos/materials_leather_chesterfield_preset_dark_brown_leather_random_2_seed95_seed95_last.ckpt_0/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Leather Chesterfield</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/universal_videos/materials_fabric_molle_system_fabric_lizard_camouflage_preset_dirty_lizard_camo_random_0_seed32_seed32_last.ckpt_1/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/universal_videos/materials_fabric_molle_system_fabric_lizard_camouflage_preset_dirty_lizard_camo_random_0_seed32_seed32_last.ckpt_1/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Fabric Camouflage</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/universal_videos/0_1_last.ckpt_2/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/universal_videos/0_1_last.ckpt_2/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Material 3</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/universal_videos/materials_ground_eroded_mud_wall_default_seed76_seed76_last.ckpt_3/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/universal_videos/materials_ground_eroded_mud_wall_default_seed76_seed76_last.ckpt_3/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Eroded Mud Wall</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/universal_videos/materials_metal_stylized_ancient_chinese_armor_preset_damaged_shiny_armor_random_1_seed80_seed80_last.ckpt_4/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/universal_videos/materials_metal_stylized_ancient_chinese_armor_preset_damaged_shiny_armor_random_1_seed80_seed80_last.ckpt_4/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Ancient Chinese Armor</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/universal_videos/materials_concrete_asphalt_concrete_wall_void_emboss_pattern_default_random_2_seed2_seed2_last.ckpt_5/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/universal_videos/materials_concrete_asphalt_concrete_wall_void_emboss_pattern_default_random_2_seed2_seed2_last.ckpt_5/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Concrete Wall</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/universal_videos/materials_metal_stylized_casting_melted_metal_preset_hot_metal_random_2_seed36_seed36_last.ckpt_6/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/universal_videos/materials_metal_stylized_casting_melted_metal_preset_hot_metal_random_2_seed36_seed36_last.ckpt_6/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Melted Metal</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/universal_videos/materials_ceramic_italian_venice_floor_mosaic_tile_default_random_1_seed7_seed7_last.ckpt_7/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/universal_videos/materials_ceramic_italian_venice_floor_mosaic_tile_default_random_1_seed7_seed7_last.ckpt_7/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Venice Mosaic Tile</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/universal_videos/materials_ceramic_regular_ceramic_tiles_preset_oxidized_weave_tiles_random_2_seed61_seed61_last.ckpt_8/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/universal_videos/materials_ceramic_regular_ceramic_tiles_preset_oxidized_weave_tiles_random_2_seed61_seed61_last.ckpt_8/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Ceramic Tiles</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/universal_videos/materials_concrete_asphalt_paved_train_tracks_preset_simple_train_rail_random_0_seed5_seed5_last.ckpt_9/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/universal_videos/materials_concrete_asphalt_paved_train_tracks_preset_simple_train_rail_random_0_seed5_seed5_last.ckpt_9/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Train Tracks</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/universal_videos/materials_fabric_stylized_cable_knit_wool_preset_damaged_burnt_orange_wool_random_3_seed53_seed53_last.ckpt_10/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/universal_videos/materials_fabric_stylized_cable_knit_wool_preset_damaged_burnt_orange_wool_random_3_seed53_seed53_last.ckpt_10/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Cable Knit Wool</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/universal_videos/materials_ground_dry_rocky_cracked_mud_01_default_seed66_seed66_last.ckpt_11/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/universal_videos/materials_ground_dry_rocky_cracked_mud_01_default_seed66_seed66_last.ckpt_11/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Dry Rocky Mud</p>
           </div>
         </div>
@@ -720,123 +831,163 @@
         <h2 class="title is-3">Generated Materials: Text-to-Image</h2>
         <div class="video-grid">
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/Bumpy uneven texture of an orange peel_1.ckpt_82/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/diffusion_videos/Bumpy uneven texture of an orange peel_1.ckpt_82/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Bumpy Orange Peel Texture</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/Soft cloud-like texture of a floating island_3.ckpt_38/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/diffusion_videos/Soft cloud-like texture of a floating island_3.ckpt_38/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Cloud-like Floating Island</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/texture_of_dragon_etched_glass_0.ckpt_87/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/diffusion_videos/texture_of_dragon_etched_glass_0.ckpt_87/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Dragon Etched Glass</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/texture_of_dragon-embossed_printed_circuit_board_0.ckpt_72/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/diffusion_videos/texture_of_dragon-embossed_printed_circuit_board_0.ckpt_72/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Dragon Circuit Board</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/Flaky crumbly texture of a fresh croissant_3.ckpt_22/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/diffusion_videos/Flaky crumbly texture of a fresh croissant_3.ckpt_22/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Flaky Croissant Texture</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/Velvety luminescent petals of a night-blooming flower_0.ckpt_20/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/diffusion_videos/Velvety luminescent petals of a night-blooming flower_0.ckpt_20/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Luminescent Flower Petals</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/polished concrete_2.ckpt_4/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/diffusion_videos/polished concrete_2.ckpt_4/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Polished Concrete</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/old worn out hardwood floor_3.ckpt_12/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/diffusion_videos/old worn out hardwood floor_3.ckpt_12/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Old Worn Hardwood Floor</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/dirty concrete_2.ckpt_85/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/diffusion_videos/dirty concrete_2.ckpt_85/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Dirty Concrete</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/wooden panels red oak_4.ckpt_55/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/diffusion_videos/wooden panels red oak_4.ckpt_55/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Wooden Panels Red Oak</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/crochet pattern_3.ckpt_86/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/diffusion_videos/crochet pattern_3.ckpt_86/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Crochet Pattern</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/black shiny ceramic floor tiles_3.ckpt_45/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/diffusion_videos/black shiny ceramic floor tiles_3.ckpt_45/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Black Shiny Ceramic Tiles</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/red rock cliff_2.ckpt_2/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/diffusion_videos/red rock cliff_2.ckpt_2/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Red Rock Cliff</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/brown matte leather_2.ckpt_84/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/diffusion_videos/brown matte leather_2.ckpt_84/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Brown Matte Leather</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/animal skin leopard_3.ckpt_14/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/diffusion_videos/animal skin leopard_3.ckpt_14/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Animal Skin Leopard</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/linen fabric_3.ckpt_73/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/diffusion_videos/linen fabric_3.ckpt_73/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Linen Fabric</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/red glossy leather_0.ckpt_80/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/diffusion_videos/red glossy leather_0.ckpt_80/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Red Glossy Leather</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/green moss_0.ckpt_44/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/diffusion_videos/green moss_0.ckpt_44/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Green Moss</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/Translucent jellyfish-like surface of a mystical portal_0.ckpt_0/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/diffusion_videos/Translucent jellyfish-like surface of a mystical portal_0.ckpt_0/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Translucent Jellyfish Portal</p>
           </div>
           <div class="video-item">
-            <video autoplay controls muted loop playsinline>
-              <source src="data/diffusion_videos/Wavy holographic surface of an interdimensional mirror_0.ckpt_1/render.mp4" type="video/mp4">
-            </video>
+            <div class="video-container">
+              <video autoplay controls muted loop playsinline>
+                <source src="data/diffusion_videos/Wavy holographic surface of an interdimensional mirror_0.ckpt_1/render.mp4" type="video/mp4">
+              </video>
+            </div>
             <p class="video-caption">Holographic Interdimensional Mirror</p>
           </div>
         </div>
